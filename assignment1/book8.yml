@@ -1,0 +1,26 @@
+                          #CHANGE SELINUX PERMISSION#
+                      #-------------QUESTION-8------------#
+                                              
+---
+ - name: Change SeLinux Permission
+   hosts: all
+   tasks:
+     - name: change permission to enforcing
+       lineinfile:
+         path: /etc/selinux/config
+         regex: "^SELINUX="
+         line: "SELINUX=permissive"
+     - name: Reboot the server
+       reboot:
+         reboot_timeout: 300
+
+
+
+
+
+         
+
+
+         
+
+

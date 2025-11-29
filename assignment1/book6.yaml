@@ -1,0 +1,28 @@
+                          #CREATE MULTIPLE USERS#
+                      #-------------QUESTION-6------------#
+                                              
+---
+ - name: Create users
+   hosts: all
+   vars:
+     u:
+       - user1
+       - user2
+       - user3
+       - user4
+   tasks:
+     - name: create users
+       user:
+         name: "{{item}}"
+         state: absent
+         remove: yes 
+       loop: "{{u}}"
+
+
+
+         
+
+
+         
+
+

@@ -1,0 +1,19 @@
+                          #INSTALL PACKAGE NGINX#
+                       #--------QUESTION-2-------#
+                                              
+---
+ - name: install package
+   hosts: all
+   tasks:
+     - name: install package nginx
+       dnf:
+         name: nginx
+         state: present
+     - name: start and enable
+       service:
+         name: nginx
+         state: started
+         enabled: yes
+         
+
+

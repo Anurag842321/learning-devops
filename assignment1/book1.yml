@@ -1,0 +1,20 @@
+                          #CREATE USER STUDENT#
+                       #--------QUESTION-1---------#.
+---
+- name: this is my first yaml
+  hosts: all
+  tasks:
+    - name: create user student 1
+      user:
+        name: student1
+        state: present
+        uid: '5000'
+
+
+
+
+
+
+
+
+

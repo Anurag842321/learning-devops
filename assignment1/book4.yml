@@ -1,0 +1,25 @@
+                          #CREATE A DIRECTORY#
+                       #--------QUESTION-4---------#
+                                              
+---
+ - name: Create a directory
+   hosts: all
+   tasks:
+     - name: create user
+       user:
+         name: devops
+         state: present
+
+     - name: create direcroty
+       file:
+         path: /opt/project
+         state: directory
+         owner: devops
+         mode: '755'
+
+         
+
+
+         
+
+

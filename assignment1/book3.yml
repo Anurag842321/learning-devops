@@ -1,0 +1,27 @@
+                          #DEPLOY INDEX.HTML FILE#
+                       #--------QUESTION-3---------#
+                                              
+---
+ - name: install package
+   hosts: all
+   tasks:
+     - name: install package nginx
+       dnf:
+         name: nginx
+         state: present
+     - name: start and enable
+       service:
+         name: nginx
+         state: started
+         enabled: yes
+     - name: add data to '/usr/share/nginx/html/'
+       copy:
+         src: /root/project/index.html
+         dest: /usr/share/nginx/html/
+
+         
+
+
+         
+
+

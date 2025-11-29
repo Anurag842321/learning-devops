@@ -1,0 +1,27 @@
+                          #INSTALL PACKAGE USING VARIABLE#
+                      #-------------QUESTION-5--------------#
+                                              
+---
+ - name: Install package using vars
+   hosts: all
+   vars:
+     p:
+       - tree
+       - wget
+       - docker
+       - git
+   tasks:
+     - name: install packages
+       dnf:
+         name: "{{item}}"
+         state: present
+       loop: "{{p}}"
+
+
+
+         
+
+
+         
+
+
