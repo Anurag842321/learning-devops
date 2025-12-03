@@ -1,0 +1,21 @@
+                          #INSTALL PACKAGE NGINX#
+                       #--------QUESTION-2-------#
+                                              
+---
+ - name: install package
+   hosts:  172.31.12.72
+   tasks:
+     - name: install package "{{ package }}"
+       dnf:
+         name: "{{ package }}"
+         state: present
+     
+     - name: start and enable "{{ service }}"
+       service:
+         name: "{{ item }}"
+         state: started
+         enabled: yes
+       loop: "{{ service }}"
+         
+
+

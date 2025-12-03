@@ -1,0 +1,29 @@
+                                    #PRACTICE#
+                      #--------VARS-IN-COMMAND_LINE-----------#
+                                              
+---
+ - name: Install package using vars
+   hosts: all
+   tasks:
+     - name: install packages
+       dnf:
+         name: "{{ item }}"
+         state: present
+       loop: "{{ p }}"
+       register: pinfo
+
+     - name: information aout install packages
+       debug:
+         msg:
+           - "{{ p }}"
+
+
+
+                              #Use This Command To Execute#
+# ansible-playbook vars_in_command_line.yml -e "p=['git','tree','httpd'] --check 
+         
+
+
+         
+
+

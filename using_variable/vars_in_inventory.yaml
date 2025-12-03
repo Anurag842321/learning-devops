@@ -1,0 +1,20 @@
+#                                              PRACTICE
+#                                   -------VARS IN INVENTORY--------
+---
+ - name: Create Multiple Users
+   hosts: all
+   tasks:
+     - name: create users
+       user:
+         name: "{{ item }}"
+         state: present
+       loop: "{{ users }}"
+
+
+
+         
+
+
+         
+
+

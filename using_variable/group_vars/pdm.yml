@@ -1,0 +1,6 @@
+package:
+  - htop 
+  - postfix
+service:
+  - httpd
+  - nginx

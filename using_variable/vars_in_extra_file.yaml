@@ -1,0 +1,35 @@
+                          #CREATE A DIRECTORY#
+                       #--------QUESTION-4---------#
+                                              
+---
+ - name: Create a directory
+   hosts: all
+   vars_files:
+     - my_vars.yml
+   tasks:
+     - name: create user "{{ user }}"
+       user:
+         name: "{{ user }}"
+         state: present
+       register: uinfo
+
+     - name: information about user
+       debug:
+         msg: "{{ uinfo}}"
+
+     - name: create direcroty "{{ dir }}"
+       file:
+         path: "{{ dir }}"
+         state: directory
+         mode: '755'
+       register: dinfo
+
+     - name: information about user
+       debug:
+        msg: "{{ dinfo }}"
+         
+
+
+         
+
+
